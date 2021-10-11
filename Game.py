@@ -25,4 +25,37 @@ print("Alright, " + name + " choose your next move: ")
 possible_actions = ["Sleep", "Study", "Explore", "Eat", "Quit"]
 possible_directions = ["north", "east", "south", "west"]
 
+def menu_():
+    """Definition for the menu"""
+    for action in possible_actions:
+        print(f" {action}")
+    menu_c = str(input("Which action would you like to choose? "))
+    if menu_c == "Sleep":
+        print("Goodnight... ")
+    elif menu_c == "Study":
+        print("Pursuing educational prowess, please wait ")
+    elif menu_c == "Explore":
+        # The program's way of taking directions
+        for direction in possible_directions:
+                print(f" {direction}")
+        directions_chosen = input("What direction would you like to go? ")
+        if directions_chosen.lower() in possible_directions:
+            print(f"Going {directions_chosen}!")
+        else:
+            print("Invalid direction, choose a direction!")
+    elif menu_c == "Eat":
+            print("Eating!")
+    # Quit function will work with the sys.exit command
+    elif menu_c == "Quit":
+        choice_s = input("Are you sure? Enter 'yes' to quit, or any other key to return ")
+        if choice_s.lower() == "yes":
+            print("Exiting, Goodbye " + name)
+            sys.exit()     
+        else:
+            print("Continue!")
+    else:
+        print("Please enter a valid option ")
+
+
+
 
