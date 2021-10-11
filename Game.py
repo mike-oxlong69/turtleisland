@@ -56,6 +56,6 @@ def menu_():
     else:
         print("Please enter a valid option ")
 
-
-
-
+# Infinite loop for menu to stay active, will not close unless 'quit' is chosen
+while True:
+    menu_()
