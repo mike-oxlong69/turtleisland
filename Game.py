@@ -25,6 +25,7 @@ print("Alright, " + name + " choose your next move: ")
 possible_actions = ["Sleep", "Study", "Explore", "Eat", "Quit"]
 possible_directions = ["north", "east", "south", "west"]
 
+
 def menu_():
     """Definition for the menu"""
     for action in possible_actions:
@@ -47,10 +48,10 @@ def menu_():
             print("Eating!")
     # Quit function will work with the sys.exit command
     elif menu_c == "Quit":
-        choice_s = input("Are you sure? Enter 'yes' to quit, or any other key to return ")
+        choice_s = input("Are you sure? (yes to quit-any other key to return)")
         if choice_s.lower() == "yes":
             print("Exiting, Goodbye " + name)
-            sys.exit()     
+            sys.exit()
         else:
             print("Continue!")
     else:
