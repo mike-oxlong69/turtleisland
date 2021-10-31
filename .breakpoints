@@ -4,8 +4,16 @@
       {
         "id": "c5d59aff-eec3-400f-8b0b-77c9d0abe073",
         "line": 1,
-        "version": 46,
+        "version": 157,
         "index": 0
+      }
+    ],
+    "inventory.py": [
+      {
+        "id": "f38b5a04-c7f2-48a4-9fee-eacfaeff7f85",
+        "line": 8,
+        "version": 13,
+        "index": 185
       }
     ]
   }

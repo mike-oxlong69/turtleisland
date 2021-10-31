@@ -6,8 +6,14 @@
 # Description: Menu for Text-Based Adventure
 import sys
 from time import sleep
-
-
+try:
+    import sys
+    import inventory as inv
+    import characters as char
+except ModuleNotFoundError:
+    print("Error, import failed")
+    print("Game ended")
+    sys.exit()
 # Slow text for unique visual opening text
 def slow(text):
     """ Prints title of game in a typewriter style """
@@ -33,6 +39,7 @@ def menu_():
     menu_c = str(input("Which action would you like to choose? "))
     if menu_c == "Sleep":
         print("Goodnight... ")
+        char.character_selector()
     elif menu_c == "Study":
         print("Pursuing educational prowess, please wait ")
     elif menu_c == "Explore":
