@@ -18,9 +18,8 @@ except ModuleNotFoundError:
 def slow(text):
     """ Prints title of game in a typewriter style """
     words = str(text)
-
     for char in words:
-        sleep(0.25)
+        sleep(0.01)
         print(char, end="", flush=True)
 # Start of menu player chooses name and is introduced to the game
 print("Text-Based Adventure Menu")
@@ -28,41 +27,51 @@ print(slow("Welcome player - "))
 name = input("What should we call you? ")
 print("Alright, " + name + " choose your next move: ")
 # Actions and directions possible
-possible_actions = ["Sleep", "Study", "Explore", "Eat", "Quit"]
+possible_actions = ["Inventory", "Study", "Explore", "Eat", "Quit"]
 possible_directions = ["north", "east", "south", "west"]
 
 
 def menu_():
     """Definition for the menu"""
     for action in possible_actions:
-        print(f" {action}")
+        print(f"[ {possible_actions.index(action) + 1} ] {action}")
     menu_c = str(input("Which action would you like to choose? "))
-    if menu_c == "Sleep":
-        print("Goodnight... ")
-        char.character_selector()
-    elif menu_c == "Study":
+    if menu_c == "1":
+      #inventory selection
+        print("\nInventory:")
+        inv.start_inventory_fnct()
+        inv_desc = input("\nShow descriptions? \nYes [1], No [2] ")
+        if inv_desc == "1":
+            inv.inventory_description()
+        else:
+            print("No problemo")
+    elif menu_c == "2":
+      #study selection
         print("Pursuing educational prowess, please wait ")
-    elif menu_c == "Explore":
+    elif menu_c == "3":
+        #explore selection
         # The program's way of taking directions
         for direction in possible_directions:
-                print(f" {direction}")
-        directions_chosen = input("What direction would you like to go? ")
-        if directions_chosen.lower() in possible_directions:
-            print(f"Going {directions_chosen}!")
+                print(f"[ {possible_directions.index(direction) + 1} ] {direction}")
+        directions_chosen = int(input("What direction would you like to go? "))
+        if directions_chosen < 5:
+            print(f"Going {possible_directions[directions_chosen - 1]}!")
         else:
-            print("Invalid direction, choose a direction!")
-    elif menu_c == "Eat":
-            print("Eating!")
+            print("Invalid response, please enter a value between 1-4")
+    elif menu_c == "4":
+      #eat selection
+        print("Eating!")
     # Quit function will work with the sys.exit command
-    elif menu_c == "Quit":
-        choice_s = input("Are you sure? (yes to quit-any other key to return)")
+    elif menu_c == "5":
+      #quit selection
+        choice_s = input("Are you sure? (yes- quit | any other key- return)")
         if choice_s.lower() == "yes":
             print("Exiting, Goodbye " + name)
             sys.exit()
         else:
             print("Continue!")
     else:
-        print("Please enter a valid option ")
+        print("Please enter a valid number \n ")
 
 # Infinite loop for menu to stay active, will not close unless 'quit' is chosen
 while True:

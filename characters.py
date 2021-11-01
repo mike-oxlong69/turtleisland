@@ -2,7 +2,7 @@
 # Period: 3
 # Date created: Ocotober 20th, 2021
 # Date modified: October 26th, 2021
-# Name: Anas Munshi
+# Name: Muhammad Munshi
 # Description: Character Selection and function for Text Based Adventure
 
 # Variable used to maintain loop if user's selection is invalid
@@ -45,4 +45,4 @@ def character_selector():
         print("easy peasy from here\n")
         characterSelect = False
     else:
-        print("Please select a valid number (1 or 2)")
+        print("Please select a valid number (1 or 2)\n")
