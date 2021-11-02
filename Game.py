@@ -10,10 +10,13 @@ try:
     import sys
     import inventory as inv
     import characters as char
+    import areas as area
 except ModuleNotFoundError:
     print("Error, import failed")
     print("Game ended")
     sys.exit()
+
+
 # Slow text for unique visual opening text
 def slow(text):
     """ Prints title of game in a typewriter style """
@@ -37,7 +40,6 @@ def menu_():
         print(f"[ {possible_actions.index(action) + 1} ] {action}")
     menu_c = str(input("Which action would you like to choose? "))
     if menu_c == "1":
-      #inventory selection
         print("\nInventory:")
         inv.start_inventory_fnct()
         inv_desc = input("\nShow descriptions? \nYes [1], No [2] ")
@@ -46,24 +48,28 @@ def menu_():
         else:
             print("No problemo")
     elif menu_c == "2":
-      #study selection
         print("Pursuing educational prowess, please wait ")
     elif menu_c == "3":
-        #explore selection
         # The program's way of taking directions
         for direction in possible_directions:
-                print(f"[ {possible_directions.index(direction) + 1} ] {direction}")
+            print(f"[ {possible_directions.index(direction) + 1} ]{direction}")
         directions_chosen = int(input("What direction would you like to go? "))
         if directions_chosen < 5:
             print(f"Going {possible_directions[directions_chosen - 1]}!")
+            print("\nAreas:")
+            area.start_area_fnct()
+            area_desc = input("\nShow descriptions? \nYes [1], No [2] ")
+            if area_desc == "1":
+                area.area_description()
+            else:
+                print("No problemo")
         else:
             print("Invalid response, please enter a value between 1-4")
     elif menu_c == "4":
-      #eat selection
         print("Eating!")
     # Quit function will work with the sys.exit command
     elif menu_c == "5":
-      #quit selection
+        # Quit selection
         choice_s = input("Are you sure? (yes- quit | any other key- return)")
         if choice_s.lower() == "yes":
             print("Exiting, Goodbye " + name)
