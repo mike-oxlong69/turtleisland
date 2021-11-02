@@ -27,3 +27,9 @@ opening sequence
 - 3 different items added
 - Inventory implemented 
 - Accessibility improved
+### 1.6.0 - 2021-11-02
+- Areas created
+- 3 new areas added
+- Areas implemented
+- Accessibility improved
+- Basic fixes and corrections
