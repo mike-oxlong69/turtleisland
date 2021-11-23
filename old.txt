@@ -33,7 +33,6 @@ print("Alright, " + name + " choose your next move: ")
 possible_actions = ["Inventory", "Study", "Explore", "Eat", "Quit"]
 possible_directions = ["north", "east", "south", "west"]
 
-
 def menu_():
     """Definition for the menu"""
     for action in possible_actions:
@@ -57,7 +56,7 @@ def menu_():
         if directions_chosen < 5:
             print(f"Going {possible_directions[directions_chosen - 1]}!")
             print("\nAreas:")
-            area.start_area_fnct()
+            area.start_area_fnct() 
             area_desc = input("\nShow descriptions? \nYes [1], No [2] ")
             if area_desc == "1":
                 area.area_description()
@@ -82,3 +81,4 @@ def menu_():
 # Infinite loop for menu to stay active, will not close unless 'quit' is chosen
 while True:
     menu_()
+

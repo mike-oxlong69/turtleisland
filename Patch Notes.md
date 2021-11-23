@@ -33,3 +33,10 @@ opening sequence
 - Areas implemented
 - Accessibility improved
 - Basic fixes and corrections
+### 2.0.0 - 2021-11-23
+- Revamped whole game
+- Added Map
+- Added Inventory 
+- Added Character classes and descriptions
+- Accessibility improved
+- Major fixes and corrections

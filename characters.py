@@ -1,48 +1,47 @@
 # Course: CS 30
 # Period: 3
-# Date created: Ocotober 20th, 2021
-# Date modified: October 26th, 2021
-# Name: Muhammad Munshi
+# Date created: November 23rd, 2021
+# Date modified: November 23rd, 2021
+# Name: Anas Munshi
 # Description: Character Selection and function for Text Based Adventure
 
-# Variable used to maintain loop if user's selection is invalid
-characterSelect = True
+# chrselect makes false until true
+chrselect = True
 
 # Characters with description
-characters = ["Mark Markothy [1]", "Jacob Jaqueefious [2]"]
-characterDescriptions = {
-    "Mark Markothy":
-        {"Description": "Middle aged white man with kids, "
-            "has no skills whatsoever, also disabled",
-            "Bonuses": "None lol"},
-    "Jacob Jaqueefious":
-        {"Description": "Superman but black basically. "
-            "Plus jimgunis bunda",
-            "Bonuses": "Has +999 Damage and +999 Defense points"}
+character_selection = ["FatBoiBari [1]", "Skinny Pete [2]"]
+character_s = {
+    "FatBoiBari":
+        {"Description": "Chunky monkey and upcoming drill"
+            " artist out of Chiraq" ,
+            "Bonuses": "Has +1 Speed and +5 Damage points"},
+    "Skinny Pete":
+        {"Description": "Anorexic ",
+            "Bonuses": "Has +1 Damage and +4 Defense points"}
             }
 
 
 def character_choice():
     '''Function to write out characters with a small description'''
-    for character in characterDescriptions:
+    for character in character_s:
         print(f"\n{character}")
-        for item in characterDescriptions[character]:
-            print(f"{item} - {characterDescriptions[character][item]}")
+        for item in character_s[character]:
+            print(f"{item} - {character_s[character][item]}")
 
 
-def character_selector():
-    '''Function to allow user to choose character'''
+def character_selected():
+    '''Function to allow user to choose charcater'''
     print("\nCharacters:")
-    global characterSelect
+    global chrselect
     character_choice()
-    character_chosen = input("\nSelect character [1][2]\n")
-    if character_chosen == "1":
-        print("\nMark Markothy 'SELECTED'")
-        print("lel ur screwed breh\n")
-        characterSelect = False
-    elif character_chosen == "2":
-        print("\nJacob Jaqueefious 'SELECTED'")
-        print("easy peasy from here\n")
-        characterSelect = False
+    character_chosen = input("\nWhich character will you choose?\n")
+    if character_chosen == "FatBoiBari":
+        print("\nFatBoiBari 'SELECTED'")
+        print("Great choice, Extra strength will help you\n")
+        chrselect = False
+    elif character_chosen == "Skinny Pete":
+        print("\nSkinny Pete 'SELECTED'")
+        print("Excellent, extra defense will come in handy\n")
+        chrselect = False
     else:
-        print("Please select a valid number (1 or 2)\n")
+        print("Please enter a valid character name")
