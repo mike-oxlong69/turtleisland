@@ -9,7 +9,7 @@ import inventory as inv
 
 class MainCharacter():
     def __init__(self):
-        raise NotImplementedError("Do not create raw instances of MainCharacter objects")
+        raise NotImplementedError("Dont create raw instances of class objects")
 
     def __str__(self):
         return self.name
@@ -31,11 +31,11 @@ class FatBoiBari(MainCharacter):
         self.hp = 100
         self.inventory = inv.inventory_description()
         self.supplies = []
- 
+
 
 class SkinnyPete(MainCharacter):
     """
-    Average joe who might have lifted 
+    Average joe who might have lifted
     a little too much weights.
     """
     def __init__(self):
@@ -51,12 +51,14 @@ FatBoiBari = FatBoiBari()
 SkinnyPete = SkinnyPete()
 heroes = [FatBoiBari, SkinnyPete]
 
+
 def hero_check(hero):
     """Prints characteristics for character"""
     if hero == "FatBoiBari":
         hero_characteristics(FatBoiBari)
     elif hero == "Skinny Pete":
         hero_characteristics(SkinnyPete)
+
 
 def hero_characteristics(hero):
     """Prints out the hero's characteristics"""

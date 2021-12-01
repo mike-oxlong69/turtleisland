@@ -40,3 +40,12 @@ opening sequence
 - Added Character classes and descriptions
 - Accessibility improved
 - Major fixes and corrections
+### 2.0.1 - 2021-11-30
+- Added 3 dictionaries
+- Locations Print
+- Whitespaces taken care of
+- List Command Test
+- F-string Test
+- Two lists, organized by type
+- Pep8 fixes
+- Added Map Table

@@ -4,19 +4,38 @@
 # Date modified: November 23rd, 2021
 # Name: Anas Munshi
 # Description: Inventory System for Text-Based Adventure
- 
+
 # Inventory (Starting weapons)
+meleeItems = ["Spoon", "Butter Knife", "Sword, Pot Lid"]
+rangedItems = ["Bow", "Pistol", "Rifle"]
 inventory_s = {
     "Spoon":
         {"Description": "Provides small damage and "
             "can be used for utilities", "Damage": 5, "Protection": 0},
-    "Butter Knife":
-        {"Description": "Can cut wood and butter toast",
-            "Damage": 15, "Protection": 0},
     "Pot Lid":
         {"Description": "Provides projectile protection,",
             "Damage": 0, "Protection": 20}
         }
+rangedDesc = {
+    "Bow":
+        {"Description": "Old wooden Bow, ",
+            "Damage": 20, "Ammo": 1},
+    "Pistol":
+        {"Description": "Small Handheld revolver,",
+            "Damage": 15, "Ammo": 20},
+    "Rifle":
+        {"Description": "Long range rifle,",
+            "Damage": 5, "Ammo": 5}
+        }
+meleeDesc = {
+       "Butter Knife":
+        {"Description": "Can cut wood and butter toast",
+            "Damage": 15, "Protection": 0},
+    "Sword":
+        {"Description": "Small rusty sword,",
+            "Damage": 10, "Protection": 0},
+        }
+
 
 class Weapon():
     def __init__(self, name, description, damage):
@@ -26,16 +45,21 @@ class Weapon():
 
     def __str__(self):
         return "{}\n=======\n{}\nDamage: {}\n".format(self.name,
-        self.description, self.damage)
+                                                      self.description,
+                                                      self.damage)
+
 
 class Melee(Weapon):
     def __init__(self, name, description, damage, defense):
         super().__init__(name, description, damage)
         self.defense = defense
-    
+
     def __str__(self):
-        return "{}\n=======\n{}\nDamage: {}\nDefense: {}".format(self.name,
-        self.description, self.damage, self.defense)
+        return "{}\n====\n{}\nDamage: {}\nDefense: {}".format(self.name,
+                                                              self.description,
+                                                              self.damage,
+                                                              self.defense)
+
 
 class Sword(Melee):
     def __init__(self):
@@ -77,5 +101,6 @@ class Pistol(Range):
                          ammo=20)
 
 
-def inventory_items_on_hand():
-    print(Sword())
+def inventory_test():
+    print(f"Here is your current melee selection{*meleeItems,}")
+    print(f"\nHere is your current ranged selection{*rangedItems,}")

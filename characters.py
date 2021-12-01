@@ -13,7 +13,7 @@ character_selection = ["FatBoiBari [1]", "Skinny Pete [2]"]
 character_s = {
     "FatBoiBari":
         {"Description": "Chunky monkey and upcoming drill"
-            " artist out of Chiraq" ,
+            " artist out of Chiraq",
             "Bonuses": "Has +1 Speed and +5 Damage points"},
     "Skinny Pete":
         {"Description": "Anorexic ",

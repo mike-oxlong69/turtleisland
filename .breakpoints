@@ -8,12 +8,26 @@
         "index": 0
       }
     ],
+    "charactersDesc.py": [
+      {
+        "id": "e2ceb4c4-9866-4a00-b88b-91d8bd57dab5",
+        "line": 55,
+        "version": 46,
+        "index": 1258
+      }
+    ],
     "inventory.py": [
       {
         "id": "f38b5a04-c7f2-48a4-9fee-eacfaeff7f85",
         "line": 1,
-        "version": 143,
+        "version": 451,
         "index": 0
+      },
+      {
+        "id": "925a0b63-bda7-4c5c-8206-1b36f47e4db6",
+        "line": 26,
+        "version": 775,
+        "index": 822
       }
     ]
   }

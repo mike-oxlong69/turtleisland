@@ -39,7 +39,7 @@ while True:
         print("Attack!\n")
     elif menuSelection == "2":
         print("\nInventory:")
-        inv.inventory_items_on_hand()
+        inv.inventory_test()
         ''' inv.start_inventory_fnct()
         inv_desc = input("\nShow descriptions? \nYes [1], No [2] ")
         if inv_desc == "1":
